@@ -1,0 +1,4 @@
+
+docker run -v /Users/riyakumari/Desktop/Bittorent_Client/:/home -dit -p81:3000 501be92037f2
+
+docker exec -it unruffled_feynman /bin/bash -v

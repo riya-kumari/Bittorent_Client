@@ -17,6 +17,7 @@
 #include <string_view>
 #include <variant>
 #include <vector>
+#include <cstring>
 
 #if __has_include(<charconv>)
 #  include <charconv>
