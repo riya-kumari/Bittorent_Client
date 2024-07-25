@@ -32,6 +32,7 @@ namespace HTTP{
             int to_send_port;
 
             int start_connection(std::string send_url, int port);
+            int connect_to_peer(std::string, int port);
             int recv_msg(char* msg, int size_of_msg);
             int send_msg(const char* msg, int size_of_msg);
     };

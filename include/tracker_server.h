@@ -30,7 +30,7 @@ class TrackerServer {
 
         TrackerServer(std::string info_hash) : info_hash(info_hash){};
         std::map<std::string, int> create_tracker_req();
-        std::string generate_peer_id();
+        void generate_peer_id();
 
 };
 

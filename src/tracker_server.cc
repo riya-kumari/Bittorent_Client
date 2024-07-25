@@ -7,7 +7,7 @@
 
 using namespace std;
 
-string TrackerServer::generate_peer_id() {
+void TrackerServer::generate_peer_id() {
   string prefix = "-PC0001-";
 
   random_device dev;
@@ -27,7 +27,8 @@ string TrackerServer::generate_peer_id() {
     peer_id << chars[dist(generator)];
   }
 
-  return peer_id.str();
+  this->peer_id = peer_id.str();
+  
 
   // # -<2 character id><4 digit version number>-<random numbers>
   // >>> '-PC0001-' + ''.join([str(random.randint(0, 9)) for _ in range(12)])
@@ -36,13 +37,13 @@ string TrackerServer::generate_peer_id() {
 
 map<string, int> TrackerServer::create_tracker_req() {
   std::map<std::string, int> peers_list;
-  string peer_id = generate_peer_id();
+  this->generate_peer_id();
 
 
   std::string TRACKER_URL = this->tracker_req_str.erase(this->tracker_req_str.size() - 14);
   struct TrackerRequest tracker_req;
   tracker_req.info_hash = this->info_hash;
-  tracker_req.trackerid = peer_id;
+  tracker_req.trackerid = this->peer_id;
   tracker_req.port = 6881;
   tracker_req.uploaded = 0;
   tracker_req.downloaded = 0;

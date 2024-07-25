@@ -3,10 +3,10 @@ CXXFLAGS = -Wall -Werror -ggdb
 LDLIBS = -lssl -lcrypto
 CXXCPPFLAGS = -I./include
 
-all: client
+all: bittorent
 
-client: src/client.cc src/arg_parser.cc src/tracker_server.cc src/http.cc
-	@echo "Building client"
+bittorent: src/main.cc src/arg_parser.cc src/tracker_server.cc src/http.cc src/messages.cc src/client.cc
+	@echo "Building main"
 	$(CXX) $(CXXFLAGS) $(CXXCPPFLAGS) -o $@ $^ $(LDLIBS)
 
 clean:
