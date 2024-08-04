@@ -4,13 +4,13 @@ A user can share or download files from a peer or multiple of peers in a decentr
 
 ### How does it work?
 
-A single file is broken down into multiple _pieces_. For downloading a file, the current user would make a request to the tracker server, which will return a list of peers, containing each peer's ip and port. The current user client will then establish connections with peers from the list, requesting the missing pieces. Once it has all the pieces it can assemble a file. 
+A file is divided into multiple pieces. For instance, if you want to download a Debian ISO file, your client will first request a list of peers from a tracker server. This list includes the IP addresses and ports of peers from whom the client can download. The client then connects to these peers to request the missing pieces. Once all pieces are downloaded, the client can reassemble the file.
 
-Important terminology : 
-Leechers : Peers that download data. 
-Seeders  : Peers that upload data.
+Important Terminology:
 
-This project is focused on creating a leecher that downloads from other peers.
+Leechers: Peers that download data.
+Seeders: Peers that upload data.
+This project focuses on developing a leecher that downloads pieces from other peers.
 
 Current progress (this has been tested and is working) : 
 - Parse a torrent file
