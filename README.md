@@ -26,11 +26,6 @@ What needs to be done:
 
 1. **Setup build environment:**
 
-Can use docker : 
-```
-docker pull rkumari1/bittorent:latest
-```
-
 Prerequisites
 - C++17 or later
 - CMake 3.10 or later
@@ -47,4 +42,18 @@ Prerequisites
 ```
 ./bittorent -f <torrent filepath>
 ```
+
+## Docker Usage
+
+To run the Bittorrent Client using Docker, you can use the following commands:
+
+1. **Run the Docker container:**
+
+   ```bash
+   docker pull rkumari1/bittorent:latest
+   docker images
+   docker run -v ./Bittorrent_Client/:/home -dit -p81:3000 <docker image id>
+   docker ps -a
+   docker exec -it <container id> /bin/bash -v
+
 
