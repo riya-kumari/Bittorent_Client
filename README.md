@@ -40,7 +40,7 @@ Prerequisites
 
 3. **Run it**
 ```
-./bittorent -f <torrent filepath>
+./bittorent -f <torrent-filepath>
 ```
 
 ## Docker Usage
